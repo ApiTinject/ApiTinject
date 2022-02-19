@@ -1,0 +1,26 @@
+unit UWhats;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uTInject;
+
+type
+  TServico_Whats = class(TDataModule)
+    Inject: TInject;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Servico_Whats: TServico_Whats;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

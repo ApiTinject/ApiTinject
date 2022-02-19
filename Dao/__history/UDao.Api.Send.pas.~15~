@@ -1,0 +1,113 @@
+unit UDao.Api.Send;
+
+interface
+uses System.SysUtils,
+           System.JSON,
+
+     System.StrUtils,
+     DataSet.Serialize, FireDAC.Comp.Client,UWhats.account,UController.Comum,
+  System.Classes, System.Generics.Collections;
+
+  type
+  TSendApi = class
+  private
+    FConexao: TFDConnection;
+    FChamado: Integer;
+    FTelefone: string;
+    FMensagem: string;
+    procedure SetTelefone(const Value: string);
+    procedure SetMensagem(const Value: string);
+
+  public
+    constructor Create();
+    destructor destroy; override;
+    property Telefone: string read FTelefone write SetTelefone;
+    property Mensagem: string read FMensagem write SetMensagem;
+    function Send(out erro: string;pTelefone,pMsg: string): string;
+    function Gerar(ptipo,ptelefone,pMsg: string):string;
+
+
+  end;
+implementation
+
+{ TChamadosApi }
+
+uses UServer, Winapi.Windows;
+
+constructor TSendApi.Create();
+begin
+
+end;
+
+destructor TSendApi.destroy;
+begin
+  inherited;
+end;
+
+
+
+function TSendApi.Gerar(ptipo,ptelefone,pMsg: string): string;
+var
+  i: Integer;
+  JSONServico: TJSONArray;
+  Send, Price: TJSONObject;
+begin
+  JSONServico := TJSONArray.Create;
+  try
+      Send := TJSONObject.Create;
+      JSONServico.AddElement(Send);
+      Price := TJSONObject.Create;
+      Send.AddPair('Send', Price);
+      Price.AddPair('status','ok');
+      Price.AddPair('mensagen',pMsg);
+      Price.AddPair('Enviado para o numero',ptelefone);
+      result := JSONServico.ToString;
+  finally
+    JSONServico.Free;
+  end;
+
+end;
+
+function TSendApi.Send(out erro: string; ptelefone,pMsg: string): string;
+begin
+  try
+
+    if FServer.whats.Conectado then
+    begin
+
+      FServer.whats.SendMessage('123', pTelefone, pMsg);
+      pRetornoJson.AddPair('status', 'OK');
+      pRetornoJson.AddPair('mensagen', pMsg);
+      pRetornoJson.AddPair('Enviado para o numero', pTelefone);
+      Result := Gerar;
+      if (pRetornoJson <> nil) then
+          FreeAndNil(pRetornoJson);
+    end
+    else
+    begin
+      pRetornoJson.AddPair('status', 'Não');
+      pRetornoJson.AddPair('mensagen', 'Favor aguardar conexão');
+      Result := Gerar;
+      if (pRetornoJson <> nil) then
+          FreeAndNil(pRetornoJson);
+    end;
+
+  finally
+
+  end;
+
+end;
+
+
+
+procedure TSendApi.SetMensagem(const Value: string);
+begin
+  FMensagem := Value;
+end;
+
+procedure TSendApi.SetTelefone(const Value: string);
+begin
+  FTelefone := Value;
+end;
+
+end.

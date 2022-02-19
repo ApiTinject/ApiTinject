@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/02 21:08:01.000.477,=C:\Users\Andre Luis Santos\Documents\Embarcadero\Studio\Projects\Unit12.pas</Transaction>
+    <Transaction>2022/02/01 09:23:08.000.638,=C:\Users\Andre Luis Santos\Documents\Embarcadero\Studio\Projects\Unit12.pas</Transaction>
+    <Transaction>2022/02/01 09:27:45.000.005,C:\ApiTinJect\Fontes\UServer.pas=C:\Users\Andre Luis Santos\Documents\Embarcadero\Studio\Projects\Unit12.pas</Transaction>
+    <Transaction>2022/02/01 09:27:45.000.005,C:\ApiTinJect\Fontes\UServer.fmx=C:\Users\Andre Luis Santos\Documents\Embarcadero\Studio\Projects\Unit12.fmx</Transaction>
+    <Transaction>2022/02/01 09:28:00.000.204,C:\ApiTinJect\Fontes\Server.dproj=C:\Users\Andre Luis Santos\Documents\Embarcadero\Studio\Projects\Project11.dproj</Transaction>
+    <Transaction>2022/02/01 09:28:18.000.757,=C:\ApiTinJect\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 09:28:58.000.895,C:\ApiTinJect\Servicos\UWhats.dfm=C:\ApiTinJect\Fontes\Unit1.dfm</Transaction>
+    <Transaction>2022/02/01 09:28:58.000.895,C:\ApiTinJect\Servicos\UWhats.pas=C:\ApiTinJect\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 10:27:03.000.254,C:\ApiTinJect\Server.dproj=C:\ApiTinJect\Fontes\Server.dproj</Transaction>
+    <Transaction>2022/02/01 11:51:36.000.619,=C:\ApiTinJect\Classes\Generics.Base64.pas</Transaction>
+    <Transaction>2022/02/01 13:31:56.000.590,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:32:22.000.847,C:\ApiTinJect\Servicos\UWhats.account.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:34:51.000.267,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:35:05.000.473,C:\ApiTinJect\Servicos\UWhats.files.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:35:45.000.566,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:35:58.000.526,C:\ApiTinJect\Servicos\UWhats.base64.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:40:56.000.427,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:41:10.000.488,C:\ApiTinJect\Servicos\UWhats.qrcode.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:42:16.000.032,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:42:35.000.176,C:\ApiTinJect\Servicos\UWhats.mensagens.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:44:12.000.304,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/01 13:44:26.000.215,C:\ApiTinJect\Servicos\UWhats.functions.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/02 11:02:24.000.475,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/02 11:03:00.000.322,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Servicos\UController.Api.Send.pas</Transaction>
+    <Transaction>2022/02/02 11:12:58.000.470,=C:\ApiTinJect\Servicos\UController.Comum.pas</Transaction>
+    <Transaction>2022/02/02 11:17:13.000.115,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/02 11:18:20.000.330,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Dao\UDao.Api.Send.pas</Transaction>
+    <Transaction>2022/02/02 17:38:00.000.718,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/02 17:38:15.000.743,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Servicos\UWhats.status.pas</Transaction>
+    <Transaction>2022/02/02 18:18:59.000.603,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/02 18:19:14.000.434,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Servicos\UController.Api.Statuspas.pas</Transaction>
+    <Transaction>2022/02/02 18:20:43.000.266,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/02 18:20:56.000.713,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Dao\UDao.Api.Status.pas</Transaction>
+    <Transaction>2022/02/02 18:29:20.000.488,C:\ApiTinJect\Servicos\UController.Api.Statuspas.pas=C:\ApiTinJect\Servicos\UController.Api.Status.pas</Transaction>
+    <Transaction>2022/02/03 08:46:44.000.487,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/03 08:46:58.000.936,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Servicos\UController.Api.Auth.pas</Transaction>
+    <Transaction>2022/02/03 08:49:00.000.107,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/03 08:49:20.000.075,C:\ApiTinJect\Unit1.pas=C:\ApiTinJect\Dao\UDao.Api.Auth.pas</Transaction>
+    <Transaction>2022/02/04 11:09:57.000.263,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/04 11:10:08.000.218,C:\ApiTinJect\Servicos\UController.Api.SendFile.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/04 14:10:00.000.978,=C:\ApiTinJect\Unit1.pas</Transaction>
+    <Transaction>2022/02/04 14:10:12.000.349,C:\ApiTinJect\Dao\UDao.Api.SendFiles.pas=C:\ApiTinJect\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

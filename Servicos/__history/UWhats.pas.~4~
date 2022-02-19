@@ -1,0 +1,101 @@
+unit UWhats;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uTInject,
+    //units adicionais obrigatórias
+   uTInject.ConfigCEF,            uTInject.Constant,    uTInject.JS,
+   uTInject.Console,   uTInject.Diversos,   uTInject.AdjustNumber,  uTInject.Config,uTInject.Classes;
+
+type
+  TServico_Whats = class(TDataModule)
+    Inject: TInject;
+    procedure InjectGetQrCode(const Sender: TObject;
+      const QrCode: TResultQRCodeClass);
+    procedure InjectGetStatus(Sender: TObject);
+    procedure InjectConnected(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Servico_Whats: TServico_Whats;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+uses UServer;
+
+{$R *.dfm}
+
+procedure TServico_Whats.InjectConnected(Sender: TObject);
+begin
+ with Form12 do
+ begin
+ // lblStatus.Caption := 'ON LINE';
+  timer1.Enabled := false;
+  timer3.Enabled := false;
+
+ end;
+end;
+
+procedure TServico_Whats.InjectGetQrCode(const Sender: TObject;
+  const QrCode: TResultQRCodeClass);
+begin
+ if Inject.Authenticated = false then
+  begin
+   // Form12.Image1.Bitmap := QrCode.AQrCodeImage;// else
+    Form12.memo1.Text := QrCode.AQrCode;
+  end else
+  begin
+     Form12.Image1.Bitmap := nil;
+     Form12.memo1.Lines.Clear;
+     Form12.timer1.Enabled := false;
+     Form12.timer3.Enabled := false;
+  end;
+end;
+
+procedure TServico_Whats.InjectGetStatus(Sender: TObject);
+begin
+   case TInject(Sender).status of
+    Server_ConnectedDown       : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Server_Disconnected        : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Server_Disconnecting       : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Server_Connected           : Form12.Label1.Text := '';
+    Server_Connecting          : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Inject_Initializing        : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Inject_Initialized         : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Server_ConnectingNoPhone   : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Server_ConnectingReaderCode: Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Server_TimeOut             : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Inject_Destroying          : Form12.Label1.Text := TInject(Sender).StatusToStr;
+    Inject_Destroy             : Form12.Label1.Text:= TInject(Sender).StatusToStr;
+  end;
+
+
+ If TInject(Sender).Status in [Server_ConnectingNoPhone, Server_TimeOut] Then
+  Begin
+    if TInject(Sender).FormQrCodeType = Ft_Desktop then
+    Begin
+       if TInject(Sender).Status = Server_ConnectingNoPhone then
+          Inject.FormQrCodeStop;
+    end else
+    Begin
+      if TInject(Sender).Status = Server_ConnectingNoPhone then
+      Begin
+        if not TInject(Sender).FormQrCodeShowing then
+           TInject(Sender).FormQrCodeShowing := True;
+      end else
+      begin
+        TInject(Sender).FormQrCodeReloader;
+      end;
+    end;
+
+  End;
+end;
+
+end.

@@ -1,0 +1,46 @@
+unit UWhats;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uTInject,
+    //units adicionais obrigatórias
+   uTInject.ConfigCEF, uTInject,            uTInject.Constant,    uTInject.JS,
+   uTInject.Console,   uTInject.Diversos,   uTInject.AdjustNumber,  uTInject.Config,uTInject.Classes;
+
+type
+  TServico_Whats = class(TDataModule)
+    Inject: TInject;
+    procedure InjectGetQrCode(const Sender: TObject;
+      const QrCode: TResultQRCodeClass);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Servico_Whats: TServico_Whats;
+
+implementation
+
+{%CLASSGROUP 'FMX.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TServico_Whats.InjectGetQrCode(const Sender: TObject;
+  const QrCode: TResultQRCodeClass);
+begin
+ if Inject.Authenticated = false then
+  begin
+   // Image2.Picture := QrCode.AQrCodeImage;// else
+    memo4.Text := QrCode.AQrCode;
+  end else
+  begin
+     Image2.Picture := nil;
+     memo4.Clear;
+
+  end;
+end;
+
+end.
