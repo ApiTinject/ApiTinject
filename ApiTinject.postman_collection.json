@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "619388f7-1edf-4c98-a1d3-2144830e0160",
+		"name": "ApiTinject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send Anexo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"telefone\":\"554498005216\",\r\n\"mensagen\":\"Maravilha negão\",\r\n\"anexo\":\"C:\\\\ApiTinJect\\\\1.pdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{servidorAPI}}/sendFile",
+					"host": [
+						"{{servidorAPI}}"
+					],
+					"path": [
+						"sendFile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Texto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"telefone\":\"554498005216\",\r\n\"mensagen\":\"Maravilha negão teste\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{servidorAPI}}/send",
+					"host": [
+						"{{servidorAPI}}"
+					],
+					"path": [
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{servidorAPI}}/status",
+					"host": [
+						"{{servidorAPI}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticacao",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{servidorAPI}}/auth",
+					"host": [
+						"{{servidorAPI}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "12345",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Andre",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "servidorAPI",
+			"value": "http://localhost:8283"
+		}
+	]
+}
