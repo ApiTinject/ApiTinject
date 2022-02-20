@@ -27,12 +27,12 @@ implementation
 
 constructor TWhatsAppStatus.Create;
 begin
-
+  //falta implementar se necessario
 end;
 
 destructor TWhatsAppStatus.Destroy;
 begin
-
+   //falta implementar se necessario
   inherited;
 end;
 

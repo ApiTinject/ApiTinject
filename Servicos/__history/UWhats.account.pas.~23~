@@ -47,7 +47,8 @@ type
     //read-only
      procedure WhatsAppOnStatus(Sender: TObject);
     procedure WhatsAppOnBateria(Sender: TObject);
-       procedure WhatsAppOnGetMyNumber (Sender: TObject);
+    procedure WhatsAppOnStatusPhone(Sender: TObject);
+    procedure WhatsAppOnGetMyNumber (Sender: TObject);
     procedure WhatsAppLowBattery(Sender: TObject);
     procedure GetBateria;
     procedure WhatsAppOnQrCodeUpdate(const Sender: TObject;
@@ -131,7 +132,7 @@ begin
   FStatus  := TWhatsAppStatus.Create;
   FWhatsApp := TInject.Create(nil);
 
-  //SETA SECRET KEY NO COMPONENTE DO WHATS w4delphi
+  //SETA SECRET KEY NO COMPONENTE DO WHATS
   SetSecretKey(pSecretKey);
 
   FWhatsApp.Config.AutoDelay := 30;
@@ -155,6 +156,16 @@ begin
         freeAndNil(FrmConsole);
       end);
   end;
+//
+//  if (FormWhatsApp <> nil) then
+//  begin
+//    TThread.Synchronize(nil, procedure
+//      begin
+//        if (FormWhatsApp.Showing) then
+//          FormWhatsApp.Close;
+//        freeAndNil(FormWhatsApp);
+//      end);
+//  end;
   freeAndNil(FWhatsApp);
   freeAndNil(FQrCode);
   freeAndNil(FStatus);
@@ -309,7 +320,7 @@ begin
 
   FSecretKey := Value;
   if (FWhatsApp <> nil) then
-
+  //  FWhatsApp.SecretKey := Value;
 end;
 
 procedure TWhatsAppAccount.SetStatus(const Value: TWhatsAppStatus);
@@ -372,7 +383,15 @@ begin
 
      end;
   b64 := Copy(QrCode.Base64, pos(',', QrCode.Base64) + 1, length(QrCode.Base64));
+
+//  FId := MyID;
+
+//  FPhoneNumber := ;
+  //qrCode
   FQrCode.Base64 := b64;
+//  FQrCode.Expired := Status.QrCodeExpired;
+//  FQrCode.ExpiresAt := Status.QrCodeExpiresAt;
+//  FQrCode.Page := Status.OnQrPage;
 
  If FWhatsApp.Status in [Server_ConnectingNoPhone, Server_TimeOut] Then
   Begin
@@ -396,6 +415,24 @@ begin
   End;
 end;
 
+procedure TWhatsAppAccount.WhatsAppOnStatusPhone(Sender: TObject);
+begin
+//  if not (assigned(Status)) then
+//    exit;
+//
+//  FConnected := Status.Connected;
+//  FPhoneBattery := Status.BatteryCharge;
+//  FAuthenticated := Status.Authenticated;
+//
+//  if (Status.Status) and (Status.Authenticated) then
+//  begin
+//    FQrCode.Base64 := '';
+//  end
+//  else //TENTA CONECTAR | AUTENTICAR
+//  begin
+//    FWhatsApp.AuthenticationQrCode;
+//  end;
+end;
 
 procedure TWhatsAppAccount.WhatsIsConnected(Sender: TObject;
   Connected: Boolean);
