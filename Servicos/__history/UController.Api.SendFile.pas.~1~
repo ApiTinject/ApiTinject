@@ -1,7 +1,0 @@
-unit UController.Api.SendFile;
-
-interface
-
-implementation
-
-end.
