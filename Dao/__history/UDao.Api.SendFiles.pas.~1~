@@ -1,7 +1,0 @@
-unit UDao.Api.SendFiles;
-
-interface
-
-implementation
-
-end.

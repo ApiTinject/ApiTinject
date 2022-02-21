@@ -1,7 +1,0 @@
-unit UDao.Api.Auth;
-
-interface
-
-implementation
-
-end.
